@@ -114,6 +114,10 @@ def main():
                     print('Tie')
                     running = False
 
+            # Early break so we don't process remaining events
+            if not running:
+                break
+
         update_board(window, game)
         update_cursor(window, game, cursor_xy)
         pg.display.update()
